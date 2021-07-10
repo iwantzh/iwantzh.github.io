@@ -27,7 +27,7 @@ iter=$3 # meaning days after May 22 2021. The script is supposed to be ran every
 ####################################
 # init:
 startDate=$((may22_midnight + day*iter)) #That would be 00:00 of the day of interest, realtive to which all hours from the table above will be an offset
-output_dirname="iter_$iter"
+output_dirname="./json_responses/iter_$iter"
 mkdir -p $output_dirname
 
 ####################################
@@ -49,7 +49,7 @@ do
 	fi
 
 
-	actualCmd="curl -s -X POST -H \"Authorization: Bearer $key\" -d 'name=Underground+ZH+Hourly+$(( x+1 ))&conditions.teamMember.teamId=underground-crazyhouse-hourly-arenas&clockTime=${clockTime[x]}&clockIncrement=${clockIncr[x]}&minutes=${durminute[x]}&startDate=$ts&variant=crazyhouse&description=[https://iwantzh.github.io/](https://iwantzh.github.io/)+redirects+you+to+the+currently+running+ZH+arena.+There+is+always+one+24/7%0A%0AList+of+all+ZH+tournaments:+[https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)' https://lichess.org/api/tournament"
+	actualCmd="curl -s -X POST -H \"Authorization: Bearer $key\" -d 'name=Underground+ZH+Hourly&conditions.teamMember.teamId=underground-crazyhouse-hourly-arenas&clockTime=${clockTime[x]}&clockIncrement=${clockIncr[x]}&minutes=${durminute[x]}&startDate=$ts&variant=crazyhouse&description=[https://iwantzh.github.io/](https://iwantzh.github.io/)+redirects+you+to+the+currently+running+ZH+arena.+There+is+always+one+24/7%0A%0AList+of+all+ZH+tournaments:+[https://iwantzh.github.io/list.html](https://iwantzh.github.io/list.html)' https://lichess.org/api/tournament"
 
 	echo "$actualCmd"
 
