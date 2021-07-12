@@ -1,4 +1,4 @@
-function fetchParseSortAndLoadTournamentsForUser(url, tournaments){
+function fetchParseSortAndLoadTournamentsForUser(url, tournaments, handleFinish){
 
 
 
@@ -21,7 +21,7 @@ function fetchParseSortAndLoadTournamentsForUser(url, tournaments){
 					tournaments.sort(function(a, b){return a.json['startsAt']-b.json['startsAt']});
 				}).catch( function( error ) {
 					console.info( "Received error ", error);
-				});
+				}).then ( handleFinish );
 
 	return result;
 
@@ -30,7 +30,7 @@ function fetchParseSortAndLoadTournamentsForUser(url, tournaments){
 
 ///////////////////////////////////////
 
-function fetchParseSortAndLoadTournamentsOfLichess(tournaments){
+function fetchParseSortAndLoadTournamentsOfLichess(tournaments, handleFinish){
 
 	var result = fetch( "https://lichess.org/api/tournament" ).then( function( response ) {
 			if ( !response.ok ) {
@@ -59,7 +59,7 @@ function fetchParseSortAndLoadTournamentsOfLichess(tournaments){
 			tournaments.sort(function(a, b){return a.json['startsAt']-b.json['startsAt']});
 		}).catch( function( error ) {
 			console.info( "Received error ", error);
-		});
+		}).then (handleFinish );
 
 	return result;
 

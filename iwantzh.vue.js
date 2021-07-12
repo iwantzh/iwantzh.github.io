@@ -20,21 +20,21 @@ var header1 = new Vue({
             loading3: false,
             loading4: false,
             loading5: false,
-            loading6: false
+            loading6: false,
+            loading7: false,
+            loading8: false
         },
         created: async function() {
 
 			this.$data.loading3 = true;
-			let r3 = fetchParseSortAndLoadTournamentsOfLichess(this.$data.tournaments);
+			let r3 = fetchParseSortAndLoadTournamentsOfLichess(this.$data.tournaments, () => this.$data.loading3 = false );
 
 			this.$data.loading12 = true;
 			let r22 = fetchParseSortAndLoadTournamentsForUser(
 							"https://lichess.org/api/user/blunderman1/tournament/created",
-							this.$data.tournaments);
+							this.$data.tournaments, () => this.$data.loading12 = false );
 			await r22;
-			this.$data.loading12 = false;
 			await r3;
-			this.$data.loading3 = false;
 
 			///////////////////////////////////
 
@@ -42,34 +42,37 @@ var header1 = new Vue({
 			/////////////////////////////
 			let r4 = fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/CyberShredder/tournament/created",
-							this.$data.tournaments);
+							this.$data.tournaments, () => this.$data.loading4 = false );
 
 
 			this.$data.loading5 = true;
 			let r5 = fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/TheFinnisher/tournament/created",
-							this.$data.tournaments);
+							this.$data.tournaments, () => this.$data.loading5 = false );
 
 				
 			await r4;
-			this.$data.loading4 = false;
 			await r5;
-			this.$data.loading5 = false;
-
 			/////////////////////////////////
 			this.$data.loading6 = true;
 			let r6 = fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/OFBC_Nigeria/tournament/created",
-							this.$data.tournaments);
+							this.$data.tournaments, () => this.$data.loading6 = false );
 
+			this.$data.loading7 = true;
 			let r7 = fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/adet2510/tournament/created",
-							this.$data.tournaments);
+							this.$data.tournaments, () => this.$data.loading7 = false );
 
 			await r6;
 			await r7;
-			this.$data.loading6 = false;
-
+			
+			////////////////////////////////
+			this.$data.loading8 = true;
+			let r8 = fetchParseSortAndLoadTournamentsForUser( 
+							"https://lichess.org/api/user/ajedrezconzeta/tournament/created",
+							this.$data.tournaments, () => this.$data.loading8 = false );
+			await r8;
                 
 	//////////
                 
@@ -104,6 +107,10 @@ var header1 = new Vue({
 					if (t.json["createdBy"]=="adet2510"){
 						return "#bccde5";
 					}
+					if (t.json["createdBy"]=="ajedrezconzeta"){
+						return "#d9b3a3";
+					}
+
 					return "yellow";	
 				}
         }
