@@ -17,7 +17,7 @@
 	</h1>
 	<div class="ui header centered">List of currently open tournaments organized by the ZH community and lichess:</div>
 
-	<div id="table1" class="ui celled padded">
+	<div v-cloak id="table1" class="ui celled padded">
 		<div>
 			<div class="ui header centered">
 				<div style="width:100%;height:100px;display:flex;flex-direction: row; justify-content: center;">
@@ -48,7 +48,13 @@
 					<div style="display:flex;flex-direction: column;">
 						<div style="padding:4px 4px 4px 4px;background-color:#bccde5">ofbc_nigeria/adet2510</div>
 						<div style="justify-content: center;">
-							<div v-if="loading6" class="lds-roller lds-roller-ofbc_nigeria"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="loading6 || loading7" class="lds-roller lds-roller-ofbc_nigeria"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+						</div>
+					</div>
+					<div style="display:flex;flex-direction: column;">
+						<div style="padding:4px 4px 4px 4px;background-color:#d9b3a3">ajedrezconzeta</div>
+						<div style="justify-content: center;">
+							<div v-if="loading8" class="lds-roller lds-roller-ajedrezconzeta"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 				</div>
