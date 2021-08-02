@@ -15,6 +15,9 @@
 	<h1 id="header1" class="ui header centered">
 		<span v-cloak>{{ message }}</span>
 	</h1>
+
+	<div class="ui header centered">Get redirected to the currently running ZH arena:<br/><a href="https://iwantzh.github.io/">https://iwantzh.github.io/</a></div>
+
 	<div class="ui header centered">List of currently open tournaments organized by the ZH community and lichess:</div>
 
 	<div v-cloak id="table1" class="ui celled padded">
@@ -24,37 +27,43 @@
 					<div style="display:flex;flex-direction: column;border:none;">
 						<div style="padding:4px 4px 4px 4px;background-color:#bce5dc">lichess.org</div>
 						<div style="justify-content: center;">
-							<div v-if="loading3" class="lds-roller lds-roller-lichess"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="fetches[0].loading" class="lds-roller lds-roller-lichess"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 					<div style="display:flex;flex-direction: column;border:none;">
 						<div style="padding:4px 4px 4px 4px;background-color:#c0e5bc">blunderman1</div>
 						<div style="justify-content: center;">
-							<div v-if="loading12" class="lds-roller lds-roller-blunderman1"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="fetches[1].loading" class="lds-roller lds-roller-blunderman1"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 					<div style="display:flex;flex-direction: column;border:none;">
 						<div style="padding:4px 4px 4px 4px;background-color:#e5bce4">thefinnisher</div>
 						<div style="justify-content: center;">
-							<div v-if="loading5" class="lds-roller lds-roller-thefinnisher"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="fetches[2].loading" class="lds-roller lds-roller-thefinnisher"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 					<div style="display:flex;flex-direction: column;">
 						<div style="padding:4px 4px 4px 4px;background-color:#e5d2bc">cybershredder</div>
 						<div style="justify-content: center;">
-							<div v-if="loading4" class="lds-roller lds-roller-cybershredder"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="fetches[3].loading" class="lds-roller lds-roller-cybershredder"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 					<div style="display:flex;flex-direction: column;">
-						<div style="padding:4px 4px 4px 4px;background-color:#bccde5">ofbc_nigeria/adet2510</div>
+						<div style="padding:4px 4px 4px 4px;background-color:#bccde5">ofbc_nigeria</div>
 						<div style="justify-content: center;">
-							<div v-if="loading6 || loading7" class="lds-roller lds-roller-ofbc_nigeria"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="fetches[4].loading" class="lds-roller lds-roller-ofbc_nigeria"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+						</div>
+					</div>
+					<div style="display:flex;flex-direction: column;">
+						<div style="padding:4px 4px 4px 4px;background-color:#acbdd5">adet2510</div>
+						<div style="justify-content: center;">
+							<div v-if="fetches[5].loading" class="lds-roller lds-roller-adet2510"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 					<div style="display:flex;flex-direction: column;">
 						<div style="padding:4px 4px 4px 4px;background-color:#d9b3a3">ajedrezconzeta</div>
 						<div style="justify-content: center;">
-							<div v-if="loading8" class="lds-roller lds-roller-ajedrezconzeta"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+							<div v-if="fetches[6].loading" class="lds-roller lds-roller-ajedrezconzeta"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 						</div>
 					</div>
 				</div>
