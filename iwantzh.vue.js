@@ -16,25 +16,17 @@ var header1 = new Vue({
             tournamentsTmp: [],
             tournaments: tournaments1,
 
-            loading12: false,
-            loading3: false,
-            loading4: false,
-            loading5: false,
-            loading6: false,
-            loading7: false,
-            loading8: false,
-
             fetches: [
         	    {promise: undefined, loading:false, f: function() { console.log('a'); this.loading = true; return fetchParseSortAndLoadTournamentsOfLichess(
         	    			tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('b'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser(
 							"https://lichess.org/api/user/blunderman1/tournament/created",
 							tournaments1, () => this.loading = false );}},
-			    {promise: undefined, loading:false, f: function() { console.log('c'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/CyberShredder/tournament/created",
-							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('d'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/TheFinnisher/tournament/created",
+							tournaments1, () => this.loading = false );}},
+			    {promise: undefined, loading:false, f: function() { console.log('c'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
+							"https://lichess.org/api/user/CyberShredder/tournament/created",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('e'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/OFBC_Nigeria/tournament/created",
