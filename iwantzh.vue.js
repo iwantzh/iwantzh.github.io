@@ -43,8 +43,12 @@ var header1 = new Vue({
         	let this1 = this;
         	
         	let promises = [];
-		console.log("test", Promise.any);
-        	let maxConcurrentRequests = 2;
+		
+        	let maxConcurrentRequests = 1;
+		if (Promise.any){
+			maxConcurrentRequests = 2;
+		}
+		
         	for (x in this.$data.fetches) {
 
         		this.$data.fetches[x].promise = this.$data.fetches[x].f();
@@ -52,7 +56,11 @@ var header1 = new Vue({
         		if (promises.length == maxConcurrentRequests) {        			
         			//if promises contains max amount of fetch promises we wait for any to finish:
         			console.log('waiting any of these promises to finish: ', promises);
-					await Promise.any(promises);
+					if (maxConcurrentRequests > 1){
+						await Promise.any(promises);
+					} else {
+						await promises[0];
+					}
 					//at least on of the fetches has finished - lets re-init that array with currently non-finished promises:
 					promises = [];
 					//if any of the remaining pending promises also finishes while we do this it will be cleaned next loop even if we add it now
