@@ -43,6 +43,7 @@ var header1 = new Vue({
         	let this1 = this;
         	
         	let promises = [];
+		console.log("test", Promise.any);
         	let maxConcurrentRequests = 2;
         	for (x in this.$data.fetches) {
 
