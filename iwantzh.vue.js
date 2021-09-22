@@ -20,22 +20,22 @@ var header1 = new Vue({
         	    {promise: undefined, loading:false, f: function() { console.log('a'); this.loading = true; return fetchParseSortAndLoadTournamentsOfLichess(
         	    			tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('b'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser(
-							"https://lichess.org/api/user/blunderman1/tournament/created",
+							"https://lichess.org/api/user/blunderman1/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('d'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/TheFinnisher/tournament/created",
+							"https://lichess.org/api/user/TheFinnisher/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('c'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/CyberShredder/tournament/created",
+							"https://lichess.org/api/user/CyberShredder/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('e'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/OFBC_Nigeria/tournament/created",
+							"https://lichess.org/api/user/OFBC_Nigeria/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('f'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/adet2510/tournament/created",
+							"https://lichess.org/api/user/adet2510/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('g'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/ajedrezconzeta/tournament/created",
+							"https://lichess.org/api/user/ajedrezconzeta/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}}
         	]
         },
