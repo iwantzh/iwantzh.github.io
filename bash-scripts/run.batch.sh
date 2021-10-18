@@ -1,0 +1,1 @@
+iter=`cat counter.txt` && export iter=$((iter+1)) && . ./create.tournaments.sh vs5kosp7JlsN1Qz6 vs5kosp7JlsN1Qz6 $iter && echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" && . ./rename.arenas.sh vs5kosp7JlsN1Qz6 $iter && echo $iter > ./counter.txt
