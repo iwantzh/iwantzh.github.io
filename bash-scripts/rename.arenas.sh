@@ -2,6 +2,8 @@
 # arguments:
 key=$1
 dir_with_jsons="./json_responses/iter_$2"
+#SERVER_DOMAIN="lichess.org"
+SERVER_DOMAIN="localhost:9663"
 
 ####################################
 # schedule related variables:
@@ -27,7 +29,7 @@ for filename in `ls ./$dir_with_jsons/*.json | sort -gr`; do
     fi
     #echo $description
 
-	actualCmd="curl -s -X POST -H \"Authorization: Bearer $key\" -d 'variant=crazyhouse&clockTime=${clockTime[idx]}&clockIncrement=${clockIncr[idx]}&minutes=${durminute[idx]}&description=$description' https://lichess.org/api/tournament/$tournamentId"
+	actualCmd="curl -s -X POST -H \"Authorization: Bearer $key\" -d 'variant=crazyhouse&clockTime=${clockTime[idx]}&clockIncrement=${clockIncr[idx]}&minutes=${durminute[idx]}&description=$description' https://${SERVER_DOMAIN}/api/tournament/$tournamentId"
 
 	echo "$actualCmd"
 
