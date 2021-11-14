@@ -8,7 +8,7 @@ key=$1
 
 ####################################
 # schedule related variables: future_elite_days, week_num_since_nov8
-. ./schedule.elite.init.sh 4
+. ./schedule.elite.init.sh 10
 
 output_dirname="./json_responses/"
 mkdir -p $output_dirname
