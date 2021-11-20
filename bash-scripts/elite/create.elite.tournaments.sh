@@ -1,6 +1,7 @@
-#SERVER_DOMAIN="lichess.org"
-SERVER_DOMAIN="localhost:9663"
-PROTOCOL="http"
+SERVER_DOMAIN="lichess.org"
+PROTOCOL="https"
+#SERVER_DOMAIN="localhost:9663"
+#PROTOCOL="http"
 
 url="$PROTOCOL://$SERVER_DOMAIN/api/tournament";
 
