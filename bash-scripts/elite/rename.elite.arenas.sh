@@ -2,6 +2,8 @@
 SERVER_DOMAIN="localhost:9663"
 PROTOCOL="http"
 
+export TZ='UTC'
+
 url="$PROTOCOL://$SERVER_DOMAIN/api/tournament";
 
 key=$1 

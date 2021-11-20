@@ -17,8 +17,10 @@ week=7*day
 
 batch_size=$1 #how many future dates for elite tournaments to generate
 
-now=$(date +%s) #now in seconds epoch format
-now=$((now * 1000)) # now in ms
+nowDefault=$(date +%s) #now in seconds epoch format
+nowDefault=$((nowDefault * 1000)) # now in ms
+
+now=1637691867000 #${2:nowDefault} #the new arenas will be created starting the week after the week in which this date belongs
 
 echo "now= $now"
 echo "nov08_midnight= $nov08_midnight"

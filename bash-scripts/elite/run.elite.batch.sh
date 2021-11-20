@@ -1,1 +1,1 @@
-key=`cat key.txt` && . ./create.elite.tournaments.sh $key
+key=`cat key.txt` && . ./create.elite.tournaments.sh $key && . ./rename.elite.arenas.sh $key
