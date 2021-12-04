@@ -65,7 +65,7 @@ do
 
     description="$description%0A%0AOther links:%0A[Forum thread](https://lichess.org/forum/team-crazyhouse-world-championship/elite-crazyhouse-arena-3)%0A[Crazyhouse calendar](https://teamup.com/ks3ozaeaopfk1v98bf?view%3Dagenda)"
 
-	actualCmd="curl -s -X POST -H \"Authorization: Bearer $key\" -d 'name=Elite+Crazyhouse&variant=crazyhouse&clockTime=$clockTime&clockIncrement=$clockIncr&minutes=$durminute&description=$description' $url/$tournamentId"
+	actualCmd="curl -s -X POST -H \"Authorization: Bearer $key\" -d 'conditions.minRating.rating=2100&conditions.nbRatedGame.nb=15&name=Elite+Crazyhouse&variant=crazyhouse&clockTime=$clockTime&clockIncrement=$clockIncr&minutes=$durminute&description=$description' $url/$tournamentId"
 
 	echo "$actualCmd"
 
