@@ -38,7 +38,7 @@ var header1 = new Vue({
 							"https://lichess.org/api/user/ajedrezconzeta/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('g'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
-							"https://lichess.org/api/user/lichess/tournament/created?status=10&status=20",
+							"https://lichess.org/api/team/lichess-crazyhouse/arena?status=10&status=20",
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('g'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/queenrosiemary/tournament/created?status=10&status=20",
