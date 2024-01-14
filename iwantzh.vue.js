@@ -36,6 +36,12 @@ var header1 = new Vue({
 							tournaments1, () => this.loading = false );}},
 			    {promise: undefined, loading:false, f: function() { console.log('g'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
 							"https://lichess.org/api/user/ajedrezconzeta/tournament/created?status=10&status=20",
+							tournaments1, () => this.loading = false );}},
+			    {promise: undefined, loading:false, f: function() { console.log('g'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
+							"https://lichess.org/api/user/lichess/tournament/created?status=10&status=20",
+							tournaments1, () => this.loading = false );}},
+			    {promise: undefined, loading:false, f: function() { console.log('g'); this.loading = true; return fetchParseSortAndLoadTournamentsForUser( 
+							"https://lichess.org/api/user/queenrosiemary/tournament/created?status=10&status=20",
 							tournaments1, () => this.loading = false );}}
         	]
         },
@@ -103,6 +109,12 @@ var header1 = new Vue({
 					}
 					if (t.json["createdBy"]=="ajedrezconzeta"){
 						return "#d9b3a3";
+					}
+					if (t.json["createdBy"]=="lichess"){
+						return "#2a2940";
+					}
+					if (t.json["createdBy"]=="queenrosiemary"){
+						return "#7532a8";
 					}
 
 					return "yellow";	
