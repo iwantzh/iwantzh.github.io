@@ -111,10 +111,10 @@ var header1 = new Vue({
 						return "#d9b3a3";
 					}
 					if (t.json["createdBy"]=="lichess"){
-						return "#2a2940";
+						return "#7572ba";
 					}
 					if (t.json["createdBy"]=="queenrosiemary"){
-						return "#7532a8";
+						return "#cc7de8";
 					}
 
 					return "yellow";	
