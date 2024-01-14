@@ -11,6 +11,9 @@
 .lds-roller-lichess div:after{
 	background: #bce5dc;
 }
+.lds-roller-lihouse div:after{
+	background: #2a2940;
+}
 .lds-roller-blunderman1 div:after{
 	background: #c0e5bc;
 }
@@ -28,6 +31,9 @@
 }
 .lds-roller-ajedrezconzeta div:after{
   background: #d9b3a3;
+}
+.lds-roller-queenrosiemary div:after{
+  background: #7532a8;
 }
 
 .lds-roller div:after {
